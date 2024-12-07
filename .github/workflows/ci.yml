@@ -105,4 +105,4 @@ jobs:
         with:
           node-version: 22
       - run: npm install netlify-cli -g
-      - run: netlify deploy --prod --dir target/reports/apidocs --auth ${{secrets.NETLIFY_ACCESS_TOKEN}} --site ${{secrets.NETLIFY_SITE_ID}}
+      - run: netlify deploy --prod --dir target/site/apidocs --auth ${{secrets.NETLIFY_ACCESS_TOKEN}} --site ${{secrets.NETLIFY_SITE_ID}}
