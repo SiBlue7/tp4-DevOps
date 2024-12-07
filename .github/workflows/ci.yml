@@ -125,3 +125,4 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
           netlify deploy --prod --dir target/site/apidocs --message "Deploying API documentation" --site=$NETLIFY_SITE_ID --auth=$NETLIFY_ACCESS_TOKEN
+          
