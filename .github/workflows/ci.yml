@@ -117,11 +117,12 @@ jobs:
           node-version: '22'
 
       - name: Install Netlify CLI
-        run: npm install -g netlify-cli
+        run: npm install netlify-cli -g
 
       - name: deploy on netlify
         env:
           NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_PASSWORD: ${{ secrets.NETLIFY_PASSWORD }}
         run: |
-          netlify deploy --prod --dir=target/site/apidocs --message "Deploying API documentation" --site=$NETLIFY_SITE_ID --auth=$NETLIFY_ACCESS_TOKEN
+          netlify deploy --prod --dir target/site/apidocs --message "Deploying API documentation" --site=$NETLIFY_SITE_ID --auth=$NETLIFY_PASSWORD
